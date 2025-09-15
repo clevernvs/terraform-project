@@ -9,7 +9,7 @@ terraform {
 
 resource "digitalocean_droplet" "vm_exemplo" {
   image   = "ubuntu-22-04-x64"
-  name    = var.droplet_name
+  name    = "${var.droplet_name}-${count.index}"
   region  = var.droplet_region
   size    = var.droplet_size
   backups = true
@@ -19,12 +19,13 @@ resource "digitalocean_droplet" "vm_exemplo" {
     hour    = 8
   }
   ssh_keys = [data.digitalocean_ssh_key.ssh_key.id]
+  count    = var.vms_count
 }
 
 resource "digitalocean_firewall" "firewall_exemplo" {
   name = "only-22-80-and-443"
 
-  droplet_ids = [digitalocean_droplet.vm_exemplo.id]
+  droplet_ids = [digitalocean_droplet.vm_exemplo[*].id]
 
   inbound_rule {
     protocol         = "tcp"
