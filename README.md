@@ -11,8 +11,14 @@ Esse projeto foi desenvolvido para treinamento em IaaS, utilizando o Terraform.
 
 # Utilizando o projeto:
 
+Baixar as extensões do projeto
 ```sh
 $ terraform init
+```
+
+Aplicar as modificações
+```sh
+$ terraform apply
 ```
 
 
