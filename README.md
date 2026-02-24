@@ -1,24 +1,23 @@
-<div align="center">  
+# Infrastructure as Code Project - Digital Ocean
+Projeto laboratório utilizando Terraform como ferramenta de IaC para provisionar e gerenciar infraestrutura na Digital Ocean.
 
-<h1> Terraform Project </h1>
+## Requisitos:
+- Terraform
 
-![Terraform](https://img.shields.io/badge/-Terraform-1e272e?style=for-the-badge&logo=Terraform)
-</div>
+## Como utilizar o projeto:
+```bash
+# Inicializa o diretório de trabalho e baixa as dependências do projeto 
+terraform init
 
-# Descrição: 
+# Valida a sintaxe e consistência dos arquivos .tf
+terraform validate
 
-Esse projeto foi desenvolvido para treinamento em IaaS, utilizando o Terraform.
+# Padroniza a formatação do código
+terraform fmt
 
-# Utilizando o projeto:
+# Exibe o que será alterado
+terraform plan
 
-Baixar as extensões do projeto
-```sh
-$ terraform init
+# Executa o projeto
+terraform apply
 ```
-
-Aplicar as modificações
-```sh
-$ terraform apply
-```
-
-
